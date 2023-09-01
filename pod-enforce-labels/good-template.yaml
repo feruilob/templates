@@ -1,15 +1,15 @@
 apiVersion: templates.gatekeeper.sh/v1
 kind: ConstraintTemplate
 metadata:
-  name: good-podenforcelabels
+  name: goodpodenforcelabels
 spec:
   crd:
     spec:
       names:
-        kind: K8sAzurePodEnforceLabels
-        listKind: K8sAzurePodEnforceLabelsList
-        plural: k8sazurepodenforcelabels
-        singular: k8sazurepodenforcelabels
+        kind: GoodPodEnforceLabels
+        listKind: GoodPodEnforceLabelsList
+        plural: goodpodenforcelabels
+        singular: goodpodenforcelabels
       validation:
         # Schema for the `parameters` field
         openAPIV3Schema:
@@ -22,7 +22,7 @@ spec:
   targets:
     - target: admission.k8s.gatekeeper.sh
       rego: |
-        package k8sazurepodenforcelabels
+        package goodpodenforcelabels
 
         violation[{"msg": msg, "details": {"missing_labels": missing}}] {
           input.review.object.metadata.namespace != "kube-system"
