@@ -1,7 +1,7 @@
 apiVersion: templates.gatekeeper.sh/v1
 kind: ConstraintTemplate
 metadata:
-  name: bad-podenforcelabels
+  name: good-podenforcelabels
 spec:
   crd:
     spec:
