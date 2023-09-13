@@ -13,4 +13,4 @@ spec:
       - key: control-plane
         operator: DoesNotExist
   parameters:
-    labels: {{ .Values.labels }}
+    labels: [ "label1", "label2" ]
